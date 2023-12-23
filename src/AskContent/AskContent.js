@@ -6,7 +6,7 @@ const AskContent = () => {
         <React.Fragment>
             <div className="container">
                 <div id="mainText">
-                    <h1>Main Text</h1>
+                    <p>Do you wanna go out with me?</p>
                 </div>
             </div>
         </React.Fragment>

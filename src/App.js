@@ -6,7 +6,6 @@ function App() {
   return (
     <React.Fragment>
       <AskContent>
-
       </AskContent>
     </React.Fragment>
   );
