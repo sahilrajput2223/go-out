@@ -3,6 +3,16 @@ import "./AskContent.css"
 
 const AskContent = () => {
     const [yesClick, setYesClick] = React.useState(false);
+    const [position, setPostion] = React.useState({ x: null, y: null });
+
+    React.useEffect(() => {
+    }, [position]);
+
+    function setNewButtonPositionForNo() {
+        var x = Math.random() * (window.innerWidth - document.getElementById('noButton').offsetWidth);
+        var y = Math.random() * (window.innerHeight - document.getElementById('noButton').offsetHeight);
+        setPostion({ x: x, y: y });
+    }
 
     return (
         <React.Fragment>
@@ -23,8 +33,8 @@ const AskContent = () => {
                     <img src="https://media.giphy.com/media/T86i6yDyOYz7J6dPhf/giphy.gif" alt="Yes Gif" />
                 </div>}
                 <div className="btns">
-                    <button className="btn" onClick={() => setYesClick(true)}>Yes</button>
-                    <button className="btn" onClick={() => setYesClick(false)}>No</button>
+                    <button className="btn" id="yesButton" onClick={() => setYesClick(true)}>Yes</button>
+                    <button className="btn" id="noButton" style={{ position: 'absolute', left: `${position.x}px`, top: `${position.y}px` }} onClick={setNewButtonPositionForNo}>No</button>
                 </div>
             </div>
         </React.Fragment >
