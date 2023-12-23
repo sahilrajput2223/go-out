@@ -12,3 +12,23 @@
     justify-content: center;
     align-items: center;
 }
+
+.btns {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+}
+
+.btn {
+    background-color: #F33A6A;
+    color: white;
+    padding: 15px 30px;
+    text-align: center;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border: none;
+    border-radius: 12px;
+}

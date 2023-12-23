@@ -11,6 +11,10 @@ const AskContent = () => {
                 <div id="askGif">
                     <img src="https://media.giphy.com/media/cLS1cfxvGOPVpf9g3y/giphy.gif" alt="Ask Gif" />
                 </div>
+                <div className="btns">
+                    <button className="btn">Yes</button>
+                    <button className="btn">No</button>
+                </div>
             </div>
         </React.Fragment>
     );
