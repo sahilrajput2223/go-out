@@ -12,7 +12,7 @@ const AskContent = () => {
                 </div>}
                 {yesClick && <div id="mainText">
                     <p>
-                        Yeeeyyyy, Can't wait to meet you !!
+                        Yeeeyyyy, Can't wait to see you !!
                     </p>
                 </div>
                 }
