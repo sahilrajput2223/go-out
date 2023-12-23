@@ -4,7 +4,11 @@
     font-weight: bold;
     color: whitesmoke;
     text-align: center;
-    margin-top: 20px;
-    margin-bottom: 0px;
     text-shadow: 2px 2px 5px #F33A6A;
+}
+
+#askGif {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }

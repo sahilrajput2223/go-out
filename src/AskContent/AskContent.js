@@ -8,6 +8,9 @@ const AskContent = () => {
                 <div id="mainText">
                     <p>Do you wanna go out with me?</p>
                 </div>
+                <div id="askGif">
+                    <img src="https://media.giphy.com/media/cLS1cfxvGOPVpf9g3y/giphy.gif" alt="Ask Gif" />
+                </div>
             </div>
         </React.Fragment>
     );
