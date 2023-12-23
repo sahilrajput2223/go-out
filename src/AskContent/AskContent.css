@@ -32,3 +32,14 @@
     border: none;
     border-radius: 12px;
 }
+
+#noButton {
+    position: absolute;
+    margin-left: 200px;
+    transition: 0.5s;
+}
+
+#yesButton {
+    position: absolute;
+    margin-right: 200px;
+}
