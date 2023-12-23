@@ -1,10 +1,14 @@
+import React from 'react';
 import './App.css';
+import AskContent from './AskContent/AskContent';
 
 function App() {
   return (
-    <div>
+    <React.Fragment>
+      <AskContent>
 
-    </div>
+      </AskContent>
+    </React.Fragment>
   );
 }
 
