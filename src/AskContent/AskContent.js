@@ -1,5 +1,6 @@
 import React from "react";
 import "./AskContent.css"
+import Swal from 'sweetalert2'
 
 const AskContent = () => {
     const [yesClick, setYesClick] = React.useState(false);
@@ -15,7 +16,34 @@ const AskContent = () => {
     }
 
     function handleYesEvent() {
-        setYesClick(true)
+        Swal.fire({
+            title: "Let's Fix Date 😍",
+            html:
+                '<input id="name" class="swal2-input" placeholder="Your Name">' +
+                '<input id="message" class="swal2-input" placeholder="Message">',
+            inputAttributes: {
+                autocapitalize: "off"
+            },
+            showCancelButton: true,
+            confirmButtonText: "Submit",
+            showLoaderOnConfirm: true,
+            allowOutsideClick: false,
+            preConfirm: () => {
+                const name = document.getElementById('name').value;
+                const message = document.getElementById('message').value;
+                console.log('Name:', name);
+                console.log('Message:', message);
+            }
+        }).then((result) => {
+            if (result.isConfirmed) {
+                Swal.fire({
+                    confirmButtonText: "Thanks 😀",
+                    imageUrl: "https://media.giphy.com/media/R0vZfqXm0zIhz32l2v/giphy.gif",
+                    imageAlt: "You Are Precious"
+                });
+                setYesClick(true)
+            }
+        });
     }
 
     return (
