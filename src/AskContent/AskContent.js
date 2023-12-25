@@ -21,7 +21,6 @@ const AskContent = () => {
             title: "Let's lock in a date! 🔐😍",
             html:
                 '<input type="text" id="name" class="swal2-input" placeholder="Your name" required>' +
-                '<input type="email" id="email" class="swal2-input" placeholder="Your email" required>' +
                 '<textarea id="message" class="swal2-textarea" rows="4" cols="30" placeholder="Type your message..." required></textarea>',
             inputAttributes: {
                 autocapitalize: "off"
@@ -33,16 +32,15 @@ const AskContent = () => {
             preConfirm: async () => {
                 const name = document.getElementById('name').value;
                 const message = document.getElementById('message').value;
-                const email = document.getElementById('email').value;
-                if (!name || !message || !email) {
+                if (!name || !message) {
                     Swal.showValidationMessage('Both details are required');
                 } else {
                     await emailjs.send("service_o9sgowm", "template_bf6jgjj", {
                         from_name: name,
                         to_name: "Sahil Rajput",
                         message: message,
-                        reply_to: email,
-                        form_email: email,
+                        reply_to: name,
+                        form_email: name,
                         to_email: "rajputsahil.2204@gmail.com",
                     }, 'pyzpVvAW8eSCEEr5B').then(() => {
                         Swal.fire({
