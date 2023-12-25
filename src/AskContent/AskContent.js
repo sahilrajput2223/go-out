@@ -1,6 +1,7 @@
 import React from "react";
 import "./AskContent.css"
 import Swal from 'sweetalert2'
+import emailjs from '@emailjs/browser'
 
 const AskContent = () => {
     const [yesClick, setYesClick] = React.useState(false);
@@ -19,7 +20,7 @@ const AskContent = () => {
         Swal.fire({
             title: "Let's lock in a date! 🔐😍",
             html:
-                '<input id="name" class="swal2-input" placeholder="Your name" required>' +
+                '<input type="text" id="name" class="swal2-input" placeholder="Your name" required>' +
                 '<textarea id="message" class="swal2-textarea" rows="4" cols="30" placeholder="Type your message..." required></textarea>',
             inputAttributes: {
                 autocapitalize: "off"
@@ -28,22 +29,30 @@ const AskContent = () => {
             confirmButtonText: "Submit",
             showLoaderOnConfirm: true,
             allowOutsideClick: false,
-            preConfirm: () => {
+            preConfirm: async () => {
                 const name = document.getElementById('name').value;
                 const message = document.getElementById('message').value;
                 if (!name || !message) {
                     Swal.showValidationMessage('Both details are required');
+                } else {
+                    await emailjs.send("service_o9sgowm", "template_bf6jgjj", {
+                        from_name: name,
+                        to_name: "Sahil Rajput",
+                        message: message,
+                        reply_to: name,
+                        form_email: name,
+                        to_email: "rajputsahil.2204@gmail.com",
+                    }, 'pyzpVvAW8eSCEEr5B').then(() => {
+                        Swal.fire({
+                            confirmButtonText: "Thanks 😀",
+                            imageUrl: "https://media.giphy.com/media/R0vZfqXm0zIhz32l2v/giphy.gif",
+                            imageAlt: "You Are Precious"
+                        });
+                    })
                 }
-                console.log('Name:', name);
-                console.log('Message:', message);
             }
         }).then((result) => {
             if (result.isConfirmed) {
-                Swal.fire({
-                    confirmButtonText: "Thanks 😀",
-                    imageUrl: "https://media.giphy.com/media/R0vZfqXm0zIhz32l2v/giphy.gif",
-                    imageAlt: "You Are Precious"
-                });
                 setYesClick(true)
             }
         });
