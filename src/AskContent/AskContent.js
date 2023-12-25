@@ -17,7 +17,7 @@ const AskContent = () => {
 
     function handleYesEvent() {
         Swal.fire({
-            title: "Let's Fix Date 😍",
+            title: "Let's lock in a date! 🔐😍",
             html:
                 '<input id="name" class="swal2-input" placeholder="Your name" required>' +
                 '<textarea id="message" class="swal2-textarea" rows="4" cols="30" placeholder="Type your message..." required></textarea>',
