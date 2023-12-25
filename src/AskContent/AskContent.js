@@ -34,7 +34,7 @@ const AskContent = () => {
                 </div>}
                 {!yesClick && <div className="btns">
                     <button className="btn" id="yesButton" onClick={() => setYesClick(true)}>Yes</button>
-                    <button className="btn" id="noButton" style={{ position: 'absolute', left: `${position.x}px`, top: `${position.y}px` }} onClick={setNewButtonPositionForNo}>No</button>
+                    <button className="btn" id="noButton" style={{ position: 'absolute', left: `${position.x}px`, top: `${position.y}px` }} onClick={setNewButtonPositionForNo} onMouseOver={setNewButtonPositionForNo}>No</button>
                 </div>}
             </div>
         </React.Fragment >
