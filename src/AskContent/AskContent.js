@@ -19,7 +19,8 @@ const AskContent = () => {
         Swal.fire({
             title: "Let's lock in a date! 🔐😍",
             html:
-                '<input id="name" class="swal2-input" placeholder="Your name" required>' +
+                '<input type="text" id="name" class="swal2-input" placeholder="Your name" required>' +
+                '<input type="email" id="email" class="swal2-input" placeholder="Your email" required>' +
                 '<textarea id="message" class="swal2-textarea" rows="4" cols="30" placeholder="Type your message..." required></textarea>',
             inputAttributes: {
                 autocapitalize: "off"
@@ -31,11 +32,13 @@ const AskContent = () => {
             preConfirm: () => {
                 const name = document.getElementById('name').value;
                 const message = document.getElementById('message').value;
-                if (!name || !message) {
+                const email = document.getElementById('email').value;
+                if (!name || !message || !email) {
                     Swal.showValidationMessage('Both details are required');
                 }
-                console.log('Name:', name);
-                console.log('Message:', message);
+                console.log(name)
+                console.log(message)
+                console.log(email)
             }
         }).then((result) => {
             if (result.isConfirmed) {
