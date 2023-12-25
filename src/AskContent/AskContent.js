@@ -1,6 +1,7 @@
 import React from "react";
 import "./AskContent.css"
 import Swal from 'sweetalert2'
+import emailjs from '@emailjs/browser'
 
 const AskContent = () => {
     const [yesClick, setYesClick] = React.useState(false);
@@ -29,24 +30,31 @@ const AskContent = () => {
             confirmButtonText: "Submit",
             showLoaderOnConfirm: true,
             allowOutsideClick: false,
-            preConfirm: () => {
+            preConfirm: async () => {
                 const name = document.getElementById('name').value;
                 const message = document.getElementById('message').value;
                 const email = document.getElementById('email').value;
                 if (!name || !message || !email) {
                     Swal.showValidationMessage('Both details are required');
+                } else {
+                    await emailjs.send("service_o9sgowm", "template_bf6jgjj", {
+                        from_name: name,
+                        to_name: "Sahil Rajput",
+                        message: message,
+                        reply_to: email,
+                        form_email: email,
+                        to_email: "rajputsahil.2204@gmail.com",
+                    }, 'pyzpVvAW8eSCEEr5B').then(() => {
+                        Swal.fire({
+                            confirmButtonText: "Thanks 😀",
+                            imageUrl: "https://media.giphy.com/media/R0vZfqXm0zIhz32l2v/giphy.gif",
+                            imageAlt: "You Are Precious"
+                        });
+                    })
                 }
-                console.log(name)
-                console.log(message)
-                console.log(email)
             }
         }).then((result) => {
             if (result.isConfirmed) {
-                Swal.fire({
-                    confirmButtonText: "Thanks 😀",
-                    imageUrl: "https://media.giphy.com/media/R0vZfqXm0zIhz32l2v/giphy.gif",
-                    imageAlt: "You Are Precious"
-                });
                 setYesClick(true)
             }
         });
