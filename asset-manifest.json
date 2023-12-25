@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/lets-go-out/static/css/main.e8b641c7.css",
+    "main.js": "/lets-go-out/static/js/main.c360701d.js",
+    "static/media/LoversQuarrel-Regular.ttf": "/lets-go-out/static/media/LoversQuarrel-Regular.3f475e2c7df948a2518a.ttf",
+    "index.html": "/lets-go-out/index.html",
+    "main.e8b641c7.css.map": "/lets-go-out/static/css/main.e8b641c7.css.map",
+    "main.c360701d.js.map": "/lets-go-out/static/js/main.c360701d.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.e8b641c7.css",
+    "static/js/main.c360701d.js"
+  ]
+}
