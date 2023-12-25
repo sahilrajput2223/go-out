@@ -19,8 +19,8 @@ const AskContent = () => {
         Swal.fire({
             title: "Let's Fix Date 😍",
             html:
-                '<input id="name" class="swal2-input" placeholder="Your Name">' +
-                '<input id="message" class="swal2-input" placeholder="Message">',
+                '<input id="name" class="swal2-input" placeholder="Your name" required>' +
+                '<textarea id="message" class="swal2-textarea" rows="4" cols="30" placeholder="Type your message..." required></textarea>',
             inputAttributes: {
                 autocapitalize: "off"
             },
@@ -31,6 +31,9 @@ const AskContent = () => {
             preConfirm: () => {
                 const name = document.getElementById('name').value;
                 const message = document.getElementById('message').value;
+                if (!name || !message) {
+                    Swal.showValidationMessage('Both details are required');
+                }
                 console.log('Name:', name);
                 console.log('Message:', message);
             }
