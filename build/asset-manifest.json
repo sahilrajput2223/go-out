@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/static/css/main.4b3bf2cd.css",
+    "main.js": "/static/js/main.c360701d.js",
+    "static/media/LoversQuarrel-Regular.ttf": "/static/media/LoversQuarrel-Regular.3f475e2c7df948a2518a.ttf",
+    "index.html": "/index.html",
+    "main.4b3bf2cd.css.map": "/static/css/main.4b3bf2cd.css.map",
+    "main.c360701d.js.map": "/static/js/main.c360701d.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.4b3bf2cd.css",
+    "static/js/main.c360701d.js"
+  ]
+}
