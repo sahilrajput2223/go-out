@@ -32,10 +32,10 @@ const AskContent = () => {
                 {yesClick && <div id="askGif">
                     <img src="https://media.giphy.com/media/T86i6yDyOYz7J6dPhf/giphy.gif" alt="Yes Gif" />
                 </div>}
-                <div className="btns">
+                {!yesClick && <div className="btns">
                     <button className="btn" id="yesButton" onClick={() => setYesClick(true)}>Yes</button>
                     <button className="btn" id="noButton" style={{ position: 'absolute', left: `${position.x}px`, top: `${position.y}px` }} onClick={setNewButtonPositionForNo}>No</button>
-                </div>
+                </div>}
             </div>
         </React.Fragment >
     );
